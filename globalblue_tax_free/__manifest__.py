@@ -2,7 +2,9 @@
 	"name": "TaxFree for Odoo by GlobalBlue",
 	"category": "Sales",
 	"version": "16.0.1.0.0",
-	"author": "ProcessControl",
+	"author": "GlobalBlue",
+	"sequence": 1,
+	"maintainer": "ProcessControl",
 	"license": "OPL-1",
 	"website": "",
 	"depends": [
@@ -24,7 +26,12 @@
 			"globalblue_tax_free/static/src/xml/**/*.xml",
 		],
 	},
+	"image": [
+		"static/description/thumbail_odoo.png"
+	],
 	"application": True,
     'installable': True,
     'auto_install': False,
+	"price": 0.00,
+	"currency": 'EUR',
 }
