@@ -26,6 +26,9 @@
 			"global_blue_tax_free/static/src/xml/**/*.xml",
 		],
 	},
+	"images": [
+		"static/description/thumbail_odoo.png",
+	],
 	"application": True,
     'installable': True,
     'auto_install': False,
