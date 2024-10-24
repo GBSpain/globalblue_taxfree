@@ -7,20 +7,20 @@
 		<field name="arch" type="xml">
 			<field name="pricelist_id" position="after">
 				<field name="document_identifier_integra"/>
-				<field name="totalGrossAmount" attrs="{'invisible': [('document_identifier_integra', '=', False)]}"/>
-				<field name="tff_void" attrs="{'invisible': [('document_identifier_integra', '=', False)]}"/>
+				<field name="totalGrossAmount" invisible="not document_identifier_integra"/>
+				<field name="tff_void" invisible="not document_identifier_integra"/>
 				<field name="amount_paid"/>
 				<field name="amount_return"/>
 			</field>
 			<xpath expr="//form/sheet/div" position="before">
-				<widget name="web_ribbon" title="TaxFree Voided" bg_color="bg-danger" attrs="{'invisible': [('tff_void', '!=', True)]}"/>
+				<widget name="web_ribbon" title="TaxFree Voided" bg_color="bg-danger" invisible="not tff_void"/>
 			</xpath>
 			<xpath expr="//header" position="inside">
 				<button
 					name="action_print_tax_free"
 					type="object"
 					string="Print TaxFree PDF"
-					attrs="{'invisible': [('document_identifier_integra', '=', False)]}"
+					invisible="not document_identifier_integra"
 				/>
 			</xpath>
 		</field>

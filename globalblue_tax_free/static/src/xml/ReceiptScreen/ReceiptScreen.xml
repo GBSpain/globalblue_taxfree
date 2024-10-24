@@ -32,6 +32,7 @@
 					<input type="hidden" name="poscontrolcallback" id="form_poscontrolcallback" value="true"/>
 					<input type="hidden" name="issuemodel" id="form_issuemodel" value=""/>
 					<input type="hidden" name="csrf_token" id="csfr_token_free_tax_form" value=""/>
+					<input type="hidden" name="webconfirmandissue" value="true"/>
 					<button t-on-click="this.target_form_free_tax_transfer.bind(this)" class="button freetax highlight"
 							id="button_freetax" disabled="disabled"><i class="fa fa-money"></i>
 						Manage Free-Tax</button>
