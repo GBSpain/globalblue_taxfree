@@ -1,10 +1,16 @@
 # -*- coding: utf-8 -*-
 import logging
+
 from odoo import api, fields, models, tools, _
 from odoo.exceptions import RedirectWarning, UserError, ValidationError, AccessError
+
+import json
+import requests
+from odoo.http import request
 import base64
 
 _logger = logging.getLogger(__name__)
+import codecs
 
 class PosOrder(models.Model):
 	_inherit = "pos.order"
@@ -19,6 +25,7 @@ class PosOrder(models.Model):
 	def action_print_tax_free(self):
 		if self.pdf_base64_integra:
 			base64string = base64.b64decode(self.pdf_base64_integra)
+			result = base64.b64encode(base64string)
 
 			attachment_id = self.env['ir.attachment'].create({
 				'name': _(self.pos_reference + "_ticket.pdf"),
@@ -33,9 +40,3 @@ class PosOrder(models.Model):
 					}
 		else:
 			raise AccessError("No hemos podido localizar el ticket.")
-
-	def _export_for_ui(self, order):
-		res = super(PosOrder, self)._export_for_ui(order)
-		res["pdf_base64_integra"] = self.pdf_base64_integra
-		return res
-

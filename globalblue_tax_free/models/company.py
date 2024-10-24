@@ -30,6 +30,7 @@ class Company(models.Model):
 				else:
 					api_url = company.api_url + url_segment
 				api_user = company.api_user
+				# api_user = "bkbsdbfhs"
 				api_pass = company.api_pass
 				myobj = {
 					'Username': api_user,

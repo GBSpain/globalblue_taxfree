@@ -1,5 +1,11 @@
 # -*- coding: utf-8 -*-
+"""
+    This model is used to create a boolean social sharing options.
+"""
+import base64
 from odoo import fields, models, tools, api, _
+from odoo.modules.module import get_resource_path
+from odoo.addons.website.tools import get_video_embed_code
 
 
 class res_config(models.TransientModel):

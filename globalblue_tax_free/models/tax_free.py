@@ -1,5 +1,11 @@
 # -*- coding: utf-8 -*-
+"""
+    This model is used to create a boolean social sharing options.
+"""
+import base64
 from odoo import fields, models, tools, api, _
+from odoo.modules.module import get_resource_path
+from odoo.addons.website.tools import get_video_embed_code
 from odoo.http import request
 import json
 import requests
@@ -38,6 +44,23 @@ class TaxFree(models.TransientModel):
 							return json_object['GrossAmountEligibility']
 
 		return False
+
+	# 	if pos:
+	# 		company = pos.company_id
+	#
+	# 		api_url = company.api_url + url_segment
+	# 		api_user = company.api_user
+	# 		# api_user = "bkbsdbfhs"
+	# 		api_pass = company.api_pass
+	# 		if x.text:
+	# 			json_object = json.loads(x.text)
+	# 			if 'Token' in json_object:
+	# 				return json_object['Token']
+	# 			else:
+	# 				return False
+	# 		else:
+	# 			return False
+	# return False
 
 	def getCompanyFromPos(self, pos_id):
 		pos = self.env['pos.config'].search([('id', '=', pos_id)])
