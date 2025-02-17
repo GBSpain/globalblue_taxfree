@@ -22,8 +22,8 @@
 	],
 	"assets": {
 		'point_of_sale._assets_pos': [
-			"global_blue_tax_free/static/src/js/ReceiptScreen/ReceiptScreen.js",
-			"global_blue_tax_free/static/src/xml/**/*.xml",
+			"globalblue_tax_free/static/src/js/ReceiptScreen/ReceiptScreen.js",
+			"globalblue_tax_free/static/src/xml/**/*.xml",
 		],
 	},
 	"images": [
