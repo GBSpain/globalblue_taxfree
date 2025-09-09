@@ -27,21 +27,21 @@ patch(ReceiptScreen.prototype, {
 
 	async loadFreeTaxToken() {
 		try {
-			const token = await this.rpc('/global_blue_tax_free/UserAuthenticationRequestSessionToken',
+			const token = await this.rpc('/globalblue_tax_free/UserAuthenticationRequestSessionToken',
 				{
 					model: 'res.company',
 					pos_id: this.pos.pos_session.config_id[0],
 				}
 			);
 
-			api_mode = await this.rpc('/global_blue_tax_free/getApiMode',
+			api_mode = await this.rpc('/globalblue_tax_free/getApiMode',
 				{
 					model: 'res.company',
 					pos_id: this.pos.pos_session.config_id[0],
 				}
 			);
 
-			prod_issueposturl = await this.rpc('/global_blue_tax_free/getIssuePostUrlProd',
+			prod_issueposturl = await this.rpc('/globalblue_tax_free/getIssuePostUrlProd',
 				{
 					model: 'res.company',
 					pos_id: this.pos.pos_session.config_id[0],
@@ -393,7 +393,7 @@ patch(ReceiptScreen.prototype, {
 				var issueposturl = "";
 				if(api_mode == 'dev'){
 					console.log("Mode is dev");
-					issueposturl = "https://ic2integra-web.mspe.globalblue.com/ui/integra";
+					issueposturl = "https://ic2integra.globalblue.com/ui/integra";
 				} else {
 					console.log("Mode is prod");
 					issueposturl = prod_issueposturl;
@@ -500,7 +500,7 @@ patch(ReceiptScreen.prototype, {
 		//Check Country in server
 		var grossAmount = this._grossAmount();
 
-		const touristIsValid = await this.rpc('/global_blue_tax_free/TouristEligibilityDetection',
+		const touristIsValid = await this.rpc('/globalblue_tax_free/TouristEligibilityDetection',
 			{
 				model: "tax.free",
 				country: country,
