@@ -23,7 +23,7 @@
 				 style="display:none !important; background-color:#AEFAFF; padding:5px;">
 			</div>
 			<div id="box_button_free_tax" class="buttons" style="display:none !important;">
-				<form method="post" action="https://ic2integra-web.mspe.globalblue.com/ui/integra" id="free_tax_form"
+				<form method="post" action="https://ic2integra.globalblue.com/ui/integra" id="free_tax_form"
 					  onsubmit="return target_popup(this)" target="formpopup">
 					<input type="hidden" name="sessiontoken" id="form_sessiontoken" value=""/>
 					<input type="hidden" name="application" id="form_application" value="integra"/>

@@ -26,7 +26,7 @@ class Company(models.Model):
 			if pos:
 				company = pos.company_id
 				if company.dev_mode:
-					api_url = "https://ic2integra-web.mspe.globalblue.com/service/api/" + url_segment
+					api_url = "https://ic2integra.globalblue.com/service/api/" + url_segment
 				else:
 					api_url = company.api_url + url_segment
 				api_user = company.api_user

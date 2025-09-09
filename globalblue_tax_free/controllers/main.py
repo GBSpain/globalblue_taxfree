@@ -11,7 +11,7 @@ _logger = logging.getLogger("POS Controller")
 
 class Main(http.Controller):
 
-	@http.route(['/global_blue_tax_free/TouristEligibilityDetection'], csrf=False, auth="public", type="json", method=['POST'])
+	@http.route(['/globalblue_tax_free/TouristEligibilityDetection'], csrf=False, auth="public", type="json", method=['POST'])
 	def TouristEligibilityDetection(self, **kwargs):
 		response = False
 		if kwargs:
@@ -23,7 +23,7 @@ class Main(http.Controller):
 				response = request.env[model].TouristEligibilityDetection(country, pos_id, grossAmount)
 		return response
 
-	@http.route(['/global_blue_tax_free/UserAuthenticationRequestSessionToken'], csrf=False, auth="public", type="json", method=['POST'])
+	@http.route(['/globalblue_tax_free/UserAuthenticationRequestSessionToken'], csrf=False, auth="public", type="json", method=['POST'])
 	def UserAuthenticationRequestSessionToken(self, **kwargs):
 		response = False
 		if kwargs:
@@ -33,7 +33,7 @@ class Main(http.Controller):
 				response = request.env.company.UserAuthenticationRequestSessionToken(pos_id)
 		return response
 
-	@http.route(['/global_blue_tax_free/getApiMode'], csrf=False, auth="public", type="json", method=['POST'])
+	@http.route(['/globalblue_tax_free/getApiMode'], csrf=False, auth="public", type="json", method=['POST'])
 	def getApiMode(self, **kwargs):
 		response = False
 		if kwargs:
@@ -43,7 +43,7 @@ class Main(http.Controller):
 				response = request.env.company.getApiMode(pos_id)
 		return response
 
-	@http.route(['/global_blue_tax_free/getIssuePostUrlProd'], csrf=False, auth="public", type="json", method=['POST'])
+	@http.route(['/globalblue_tax_free/getIssuePostUrlProd'], csrf=False, auth="public", type="json", method=['POST'])
 	def getIssuePostUrlProd(self, **kwargs):
 		response = False
 		if kwargs:
